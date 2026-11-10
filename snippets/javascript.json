@@ -1,0 +1,114 @@
+{
+  "Function declaration": {
+    "prefix": "fn",
+    "body": [
+      "function ${1:name}(${2:args}) {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Funktion deklarieren"
+  },
+  "Arrow function": {
+    "prefix": "afn",
+    "body": [
+      "const ${1:name} = (${2:args}) => {",
+      "\t${0}",
+      "};"
+    ],
+    "description": "Arrow Function"
+  },
+  "Async arrow function": {
+    "prefix": "aafn",
+    "body": [
+      "const ${1:name} = async (${2:args}) => {",
+      "\t${0}",
+      "};"
+    ],
+    "description": "Asynchrone Arrow Function"
+  },
+  "Named import": {
+    "prefix": "imp",
+    "body": [
+      "import { ${1:name} } from \"${2:module}\";"
+    ],
+    "description": "Named Import"
+  },
+  "Default import": {
+    "prefix": "impd",
+    "body": [
+      "import ${1:name} from \"${2:module}\";"
+    ],
+    "description": "Default Import"
+  },
+  "Export const": {
+    "prefix": "exp",
+    "body": [
+      "export const ${1:name} = ${2:value};"
+    ],
+    "description": "Konstante exportieren"
+  },
+  "Console log": {
+    "prefix": "clog",
+    "body": [
+      "console.log(${1:value});"
+    ],
+    "description": "Log-Ausgabe"
+  },
+  "Try catch": {
+    "prefix": "tryc",
+    "body": [
+      "try {",
+      "\t${1}",
+      "} catch (${2:error}) {",
+      "\tconsole.error(${2:error});",
+      "}"
+    ],
+    "description": "Try/Catch-Block"
+  },
+  "For of": {
+    "prefix": "forof",
+    "body": [
+      "for (const ${1:item} of ${2:items}) {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "for...of-Schleife"
+  },
+  "Array map": {
+    "prefix": "map",
+    "body": [
+      "${1:items}.map((${2:item}) => (",
+      "\t${0}",
+      "));"
+    ],
+    "description": "Array mit map transformieren"
+  },
+  "Fetch JSON": {
+    "prefix": "fetch",
+    "body": [
+      "const response = await fetch(\"${1:url}\");",
+      "if (!response.ok) throw new Error(\"HTTP \" + response.status);",
+      "const data = await response.json();",
+      "$0"
+    ],
+    "description": "JSON per fetch laden"
+  },
+  "Promise": {
+    "prefix": "prom",
+    "body": [
+      "return new Promise((resolve, reject) => {",
+      "\t${0}",
+      "});"
+    ],
+    "description": "Promise erstellen"
+  },
+  "Event listener": {
+    "prefix": "on",
+    "body": [
+      "${1:element}.addEventListener(\"${2:click}\", (event) => {",
+      "\t${0}",
+      "});"
+    ],
+    "description": "Event-Listener registrieren"
+  }
+}

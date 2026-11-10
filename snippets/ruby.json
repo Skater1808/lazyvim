@@ -1,0 +1,122 @@
+{
+  "Method": {
+    "prefix": "def",
+    "body": [
+      "def ${1:name}(${2:args})",
+      "\t${0}",
+      "end"
+    ],
+    "description": "Methode definieren"
+  },
+  "Class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:Name}",
+      "\tdef initialize(${2:args})",
+      "\t\t@${3:attr} = ${4:value}",
+      "\tend",
+      "",
+      "\t${0}",
+      "end"
+    ],
+    "description": "Klasse mit Konstruktor"
+  },
+  "Module": {
+    "prefix": "module",
+    "body": [
+      "module ${1:Name}",
+      "\t${0}",
+      "end"
+    ],
+    "description": "Modul definieren"
+  },
+  "Each": {
+    "prefix": "each",
+    "body": [
+      "${1:collection}.each do |${2:item}|",
+      "\t${0}",
+      "end"
+    ],
+    "description": "each-Block"
+  },
+  "Each with index": {
+    "prefix": "eachi",
+    "body": [
+      "${1:collection}.each_with_index do |${2:item}, ${3:index}|",
+      "\t${0}",
+      "end"
+    ],
+    "description": "each_with_index-Block"
+  },
+  "Hash": {
+    "prefix": "hash",
+    "body": [
+      "{ ${1:key}: ${2:value} }"
+    ],
+    "description": "Hash-Literal"
+  },
+  "Begin rescue": {
+    "prefix": "begin",
+    "body": [
+      "begin",
+      "\t${1}",
+      "rescue ${2:StandardError} => ${3:e}",
+      "\t${4:raise}",
+      "ensure",
+      "\t${5}",
+      "end"
+    ],
+    "description": "Begin/Rescue/Ensure"
+  },
+  "Attr accessor": {
+    "prefix": "attr",
+    "body": [
+      "attr_accessor :${1:name}"
+    ],
+    "description": "Getter und Setter"
+  },
+  "Require": {
+    "prefix": "req",
+    "body": [
+      "require \"${1:library}\""
+    ],
+    "description": "Bibliothek laden"
+  },
+  "Case": {
+    "prefix": "case",
+    "body": [
+      "case ${1:value}",
+      "when ${2:condition}",
+      "\t${3}",
+      "else",
+      "\t${0}",
+      "end"
+    ],
+    "description": "Case-Ausdruck"
+  },
+  "RSpec describe": {
+    "prefix": "spec",
+    "body": [
+      "RSpec.describe ${1:Class} do",
+      "\tdescribe \"${2:method}\" do",
+      "\t\tit \"${3:does something}\" do",
+      "\t\t\texpect(${4:subject}).to ${5:eq(expected)}",
+      "\t\tend",
+      "\tend",
+      "end"
+    ],
+    "description": "RSpec-Testblock"
+  },
+  "Rake task": {
+    "prefix": "rake",
+    "body": [
+      "namespace :${1:name} do",
+      "\tdesc \"${2:description}\"",
+      "\ttask ${3:task} do",
+      "\t\t${0}",
+      "\tend",
+      "end"
+    ],
+    "description": "Rake-Task"
+  }
+}

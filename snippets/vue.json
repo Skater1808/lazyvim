@@ -1,0 +1,132 @@
+{
+  "Vue SFC": {
+    "prefix": "vue",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "${1}",
+      "</script>",
+      "",
+      "<template>",
+      "\t<div class=\"${2:container}\">",
+      "\t\t${0}",
+      "\t</div>",
+      "</template>",
+      "",
+      "<style scoped>",
+      "\t.${2:container} {",
+      "\t\t${3}",
+      "\t}",
+      "</style>"
+    ],
+    "description": "Vue Single File Component"
+  },
+  "Script setup": {
+    "prefix": "script",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "\t${0}",
+      "</script>"
+    ],
+    "description": "Script-setup-Block"
+  },
+  "Template": {
+    "prefix": "template",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "\t\t${0}",
+      "\t</div>",
+      "</template>"
+    ],
+    "description": "Template-Block"
+  },
+  "Style scoped": {
+    "prefix": "style",
+    "body": [
+      "<style scoped>",
+      "\t.${1:class} {",
+      "\t\t${0}",
+      "\t}",
+      "</style>"
+    ],
+    "description": "Scoped-Style-Block"
+  },
+  "v-for": {
+    "prefix": "vfor",
+    "body": [
+      "v-for=\"${1:item} in ${2:items}\" :key=\"${3:item.id}\""
+    ],
+    "description": "v-for-Direktive"
+  },
+  "v-if": {
+    "prefix": "vif",
+    "body": [
+      "v-if=\"${1:condition}\""
+    ],
+    "description": "v-if-Direktive"
+  },
+  "ref": {
+    "prefix": "ref",
+    "body": [
+      "const ${1:name} = ref<${2:string}>(${3:''})"
+    ],
+    "description": "Reaktive Referenz"
+  },
+  "computed": {
+    "prefix": "computed",
+    "body": [
+      "const ${1:name} = computed(() => ${2:expression})"
+    ],
+    "description": "Computed Property"
+  },
+  "watch": {
+    "prefix": "watch",
+    "body": [
+      "watch(",
+      "\t() => ${1:source},",
+      "\t(${2:value}) => {",
+      "\t\t${0}",
+      "\t},",
+      ")"
+    ],
+    "description": "Watcher"
+  },
+  "defineProps": {
+    "prefix": "props",
+    "body": [
+      "const props = defineProps<{",
+      "\t${1:prop}: ${2:string}",
+      "}>()"
+    ],
+    "description": "Props definieren"
+  },
+  "defineEmits": {
+    "prefix": "emits",
+    "body": [
+      "const emit = defineEmits<{",
+      "\t${1:event}: [${2:payload}]",
+      "}>()"
+    ],
+    "description": "Emits definieren"
+  },
+  "onMounted": {
+    "prefix": "mounted",
+    "body": [
+      "onMounted(() => {",
+      "\t${0}",
+      "})"
+    ],
+    "description": "Lifecycle-Hook onMounted"
+  },
+  "Composable": {
+    "prefix": "composable",
+    "body": [
+      "export function use${1:Name}() {",
+      "\t${0}",
+      "",
+      "\treturn { }",
+      "}"
+    ],
+    "description": "Composable-Funktion"
+  }
+}

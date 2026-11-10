@@ -1,0 +1,114 @@
+{
+  "Select": {
+    "prefix": "select",
+    "body": [
+      "SELECT ${1:*}",
+      "FROM ${2:table}",
+      "WHERE ${3:condition};"
+    ],
+    "description": "SELECT-Abfrage"
+  },
+  "Insert": {
+    "prefix": "insert",
+    "body": [
+      "INSERT INTO ${1:table} (${2:columns})",
+      "VALUES (${3:values});"
+    ],
+    "description": "INSERT-Abfrage"
+  },
+  "Update": {
+    "prefix": "update",
+    "body": [
+      "UPDATE ${1:table}",
+      "SET ${2:column} = ${3:value}",
+      "WHERE ${4:condition};"
+    ],
+    "description": "UPDATE-Abfrage"
+  },
+  "Delete": {
+    "prefix": "delete",
+    "body": [
+      "DELETE FROM ${1:table}",
+      "WHERE ${2:condition};"
+    ],
+    "description": "DELETE-Abfrage"
+  },
+  "Create table": {
+    "prefix": "createtable",
+    "body": [
+      "CREATE TABLE ${1:table} (",
+      "\t${2:id} ${3:INT} PRIMARY KEY,",
+      "\t${4:created_at} TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+      ");"
+    ],
+    "description": "Tabelle anlegen"
+  },
+  "Inner join": {
+    "prefix": "join",
+    "body": [
+      "SELECT ${1:*}",
+      "FROM ${2:table_a} a",
+      "JOIN ${3:table_b} b ON b.${4:id} = a.${5:id};"
+    ],
+    "description": "INNER JOIN"
+  },
+  "Left join": {
+    "prefix": "leftjoin",
+    "body": [
+      "SELECT ${1:*}",
+      "FROM ${2:table_a} a",
+      "LEFT JOIN ${3:table_b} b ON b.${4:id} = a.${5:id};"
+    ],
+    "description": "LEFT JOIN"
+  },
+  "CTE": {
+    "prefix": "cte",
+    "body": [
+      "WITH ${1:cte} AS (",
+      "\tSELECT ${2:*}",
+      "\tFROM ${3:table}",
+      ")",
+      "SELECT *",
+      "FROM ${1:cte};"
+    ],
+    "description": "Common Table Expression"
+  },
+  "Case": {
+    "prefix": "case",
+    "body": [
+      "CASE",
+      "\tWHEN ${1:condition} THEN ${2:result}",
+      "\tELSE ${3:default}",
+      "END"
+    ],
+    "description": "CASE-Ausdruck"
+  },
+  "Create index": {
+    "prefix": "index",
+    "body": [
+      "CREATE INDEX ${1:idx_name} ON ${2:table} (${3:column});"
+    ],
+    "description": "Index anlegen"
+  },
+  "Transaction": {
+    "prefix": "transaction",
+    "body": [
+      "BEGIN;",
+      "",
+      "${1}",
+      "",
+      "COMMIT;"
+    ],
+    "description": "Transaktion"
+  },
+  "Upsert": {
+    "prefix": "upsert",
+    "body": [
+      "INSERT INTO ${1:table} (${2:columns})",
+      "VALUES (${3:values})",
+      "ON CONFLICT (${4:column}) DO UPDATE",
+      "SET ${5:column} = EXCLUDED.${5:column};"
+    ],
+    "description": "PostgreSQL Upsert"
+  }
+}
